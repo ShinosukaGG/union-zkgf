@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Union ZKGF Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="solid-header">
+    <div class="header-bar">
+      <img src="image.png" alt="Union Logo" class="logo" />
+      <div class="header-title">Union ZKGF Generator by Shinosuka 🎉</div>
+    </div>
+  </header>  <main>
+    <div class="container">
+      <div id="input-section" class="center-screen">
+        <input type="text" id="username" placeholder="Enter your username..." />
+        <button onclick="submitUsername()">Submit</button>
+      </div><div id="zkgf-section" class="hidden">
+    <img id="zkgf-image" src="hidden.jpeg" alt="Hidden ZKGF" />
+    <h2>Are you ready to reveal your ZKGF?</h2>
+    <p>There is no looking back, once revealed your ZKGF stays permanent.</p>
+    <button onclick="revealZKGF()">Reveal Your ZKGF</button>
+  </div>
+
+  <div id="reveal-section" class="hidden">
+    <canvas id="confetti-canvas"></canvas>
+    <img id="revealed-img" src="" alt="ZKGF" />
+    <h2 id="zkgf-name"></h2>
+    <div class="stats">
+      <div class="stat">
+        <label>Zero-Knowledge</label>
+        <div class="bar"><div id="zk-bar"></div></div>
+      </div>
+      <div class="stat">
+        <label>Trustless</label>
+        <div class="bar"><div id="trustless-bar"></div></div>
+      </div>
+      <div class="stat">
+        <label>Interoperable</label>
+        <div class="bar"><div id="interop-bar"></div></div>
+      </div>
+    </div>
+    <p id="final-message"></p>
+  </div>
+</div>
+
+<div id="overlay" class="hidden"></div>
+
+  </main>  <footer>
+    <p><em>This website is only for entertainment purposes. Built by <a href="https://x.com/shinosuka_eth" target="_blank">Shinosuka</a></em></p>
+  </footer>  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>  <script src="script.js"></script></body>
+</html>
