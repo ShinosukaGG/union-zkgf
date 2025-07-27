@@ -84,7 +84,7 @@ function submitUsername() {
 }
 
 function showReadyToReveal() {
-  document.getElementById("zkgf-image").src = "hidden.jpeg";
+  document.getElementById("zkgf-image").src = "hide.png";
   document.getElementById("zkgf-section").classList.remove("hidden");
 }
 
