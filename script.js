@@ -7,19 +7,17 @@ const zkgfNames = [
 
 let teamData = {};
 const assignedZKGFs = {};
-let currentUser = "";
+let currentUser = "", normalizedUser = "";
 
-// Load team data from JSON file in root
+// Load team data from JSON in root
 fetch('/top_2000_from_network.json')
-  .then(response => response.json())
+  .then(res => res.json())
   .then(data => {
     teamData = Object.fromEntries(
-      data.map(user => [user.username.toLowerCase(), { team: user.team }])
+      data.map(entry => [entry.username.toLowerCase(), { team: entry.team }])
     );
   })
-  .catch(err => {
-    console.error("Failed to load team data:", err);
-  });
+  .catch(err => console.error("Failed to load team data:", err));
 
 function randStat() {
   return Math.floor(Math.random() * 100) + 1;
@@ -48,31 +46,27 @@ function submitUsername() {
   if (username.startsWith("@")) username = username.slice(1);
 
   currentUser = username;
-  const normalizedUser = username.toLowerCase();
+  normalizedUser = username.toLowerCase();
 
   document.getElementById("input-section").classList.add("hidden");
 
-  // Team check
   if (teamData[normalizedUser]?.team === true) {
     showTeamZKGF();
     return;
   }
 
-  // Already assigned
   if (assignedZKGFs[normalizedUser]) {
     const data = assignedZKGFs[normalizedUser];
     data.badLuck ? showBadLuck() : showReadyToReveal();
     return;
   }
 
-  // 1% bad luck chance
   if (Math.random() < 0.01) {
     assignedZKGFs[normalizedUser] = { badLuck: true };
     showBadLuck();
     return;
   }
 
-  // Assign new ZKGF
   const idx = getRandomUnassignedIndex();
   const stats = {
     zeroKnowledge: randStat(),
@@ -98,10 +92,27 @@ function revealZKGF() {
   const overlay = document.getElementById("overlay");
   overlay.classList.remove("hidden");
 
+  // Fire confetti over 2 seconds
+  const duration = 2000;
+  const interval = 200;
+  let end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 40,
+      startVelocity: 25,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+
+    if (Date.now() < end) {
+      setTimeout(frame, interval);
+    }
+  })();
+
   setTimeout(() => {
     overlay.classList.add("hidden");
 
-    const normalizedUser = currentUser.toLowerCase();
     const data = assignedZKGFs[normalizedUser];
     if (!data) return;
 
@@ -117,15 +128,7 @@ function revealZKGF() {
 
     document.getElementById("final-message").innerText =
       `Congratulations "${currentUser}" on revealing your ZKGF, now it's your duty to take care of her expenses.`;
-
-    // 🎉 Confetti effect
-    confetti({
-      particleCount: 200,
-      spread: 100,
-      origin: { y: 0.6 }
-    });
-
-  }, 1000);
+  }, 2000);
 }
 
 function showBadLuck() {
@@ -133,11 +136,9 @@ function showBadLuck() {
   document.getElementById("reveal-section").classList.remove("hidden");
   document.getElementById("revealed-img").src = "badluck.png";
   document.getElementById("zkgf-name").innerText = "No ZKGF for you";
-
-  ["zk-bar", "trustless-bar", "interop-bar"].forEach(id => {
-    document.getElementById(id).style.width = "0%";
-  });
-
+  ["zk-bar", "trustless-bar", "interop-bar"].forEach(id =>
+    document.getElementById(id).style.width = "0%")
+  ;
   document.getElementById("final-message").innerText = "Bad Luck, No ZKGF for you :(";
 }
 
@@ -146,11 +147,9 @@ function showTeamZKGF() {
   document.getElementById("reveal-section").classList.remove("hidden");
   document.getElementById("revealed-img").src = "team.png";
   document.getElementById("zkgf-name").innerText = "No ZKGF for you";
-
-  ["zk-bar", "trustless-bar", "interop-bar"].forEach(id => {
-    document.getElementById(id).style.width = "0%";
-  });
-
+  ["zk-bar", "trustless-bar", "interop-bar"].forEach(id =>
+    document.getElementById(id).style.width = "0%")
+  ;
   document.getElementById("final-message").innerText =
     "You are a member of the Union Team, and you've donated your airdrop to the community. Your ZKGF has also been donated.";
-      }
+    }
