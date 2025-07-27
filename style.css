@@ -1,4 +1,4 @@
-/* Updated CSS for Union ZKGF Generator */ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Supermolot+Sans:wght@400;700&display=swap');
+/* Final CSS for Union ZKGF Generator with hyperbold UNION text */ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Supermolot+Sans:wght@400;700&display=swap');
 
 :root { --primary: #000000; --secondary: #ABECFD; --font-primary: 'JetBrains Mono', monospace; --font-secondary: 'Supermolot Sans', sans-serif; }
 
@@ -7,11 +7,19 @@
 
 body { background-color: var(--primary); color: white; font-family: var(--font-primary); min-height: 100vh; display: flex; flex-direction: column; }
 
-/* HEADER */ .solid-header { background-color: #111111; padding: 0.6rem 1rem; border-bottom: 1px solid #222; display: flex; align-items: center; justify-content: flex-start; gap: 0.75rem; }
+/* HEADER */ .solid-header { background-color: #111111; padding: 0.6rem 1rem; border-bottom: 1px solid #222; }
 
-.logo { height: 26px; }
+.header-bar { display: flex; align-items: center; justify-content: space-between; }
 
-.header-title { font-family: var(--font-secondary); font-size: 1rem; font-weight: 600; color: var(--secondary); letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.header-left { display: flex; align-items: center; gap: 0.4rem; }
+
+.header-left .logo { height: 28px; }
+
+.union-bold-text { font-family: var(--font-secondary); font-size: 1.2rem; font-weight: 900; color: white; letter-spacing: 0.5px; }
+
+.header-center { font-family: var(--font-secondary); font-size: 1rem; font-weight: 600; color: white; text-align: center; flex: 1; }
+
+.header-right { font-size: 1.2rem; color: white; }
 
 /* MAIN CONTENT */ main { flex: 1; display: flex; justify-content: center; align-items: center; padding: 1rem; }
 
@@ -55,4 +63,3 @@ footer em { font-style: italic; }
 
 footer a { color: var(--secondary); text-decoration: none; }
 
-                                        
