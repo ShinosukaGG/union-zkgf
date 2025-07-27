@@ -1,210 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Supermolot+Sans:wght@400;700&display=swap');
+/* Updated CSS for Union ZKGF Generator */ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Supermolot+Sans:wght@400;700&display=swap');
 
-:root {
-  --primary: #000000;
-  --secondary: #ABECFD;
-  --font-primary: 'JetBrains Mono', monospace;
-  --font-secondary: 'Supermolot Sans', sans-serif;
-}
+:root { --primary: #000000; --secondary: #ABECFD; --font-primary: 'JetBrains Mono', monospace; --font-secondary: 'Supermolot Sans', sans-serif; }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+{ margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-  background-color: var(--primary);
-  color: white;
-  font-family: var(--font-primary);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
 
-/* HEADER */
-.solid-header {
-  background-color: #111111;
-  padding: 0.8rem 1rem;
-  border-bottom: 1px solid #222;
-}
+body { background-color: var(--primary); color: white; font-family: var(--font-primary); min-height: 100vh; display: flex; flex-direction: column; }
 
-.header-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+/* HEADER */ .solid-header { background-color: #111111; padding: 0.6rem 1rem; border-bottom: 1px solid #222; display: flex; align-items: center; justify-content: flex-start; gap: 0.75rem; }
 
-.logo {
-  height: 28px;
-}
+.logo { height: 26px; }
 
-.header-title {
-  font-family: var(--font-secondary);
-  font-size: 1rem;
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
-}
+.header-title { font-family: var(--font-secondary); font-size: 1rem; font-weight: 600; color: var(--secondary); letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-/* MAIN CONTENT */
-main {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
+/* MAIN CONTENT */ main { flex: 1; display: flex; justify-content: center; align-items: center; padding: 1rem; }
 
-.container {
-  max-width: 700px;
-  width: 100%;
-  background: #111111;
-  padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid var(--secondary);
-  text-align: center;
-}
+.container { max-width: 700px; width: 100%; background: #111111; padding: 2rem; border-radius: 10px; border: 1px solid var(--secondary); text-align: center; }
 
-/* CENTER ENTRY */
-.center-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  margin: 0 auto;
-  width: 100%;
-  flex-wrap: wrap;
-}
+.center-screen { display: flex; justify-content: center; align-items: center; flex-direction: row; margin: 0 auto; width: 100%; flex-wrap: wrap; }
 
-#input-section input {
-  width: 65%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border-radius: 5px 0 0 5px;
-  border: 1px solid var(--secondary);
-  outline: none;
-  font-family: var(--font-primary);
-}
+#input-section input { width: 65%; padding: 0.75rem; font-size: 1rem; border-radius: 5px 0 0 5px; border: 1px solid var(--secondary); outline: none; font-family: var(--font-primary); }
 
-#input-section button {
-  padding: 0.75rem 1rem;
-  background-color: var(--secondary);
-  color: #000;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  font-weight: bold;
-  font-family: var(--font-secondary);
-  cursor: pointer;
-}
+#input-section button { padding: 0.75rem 1rem; background-color: var(--secondary); color: #000; border: none; border-radius: 0 5px 5px 0; font-weight: bold; font-family: var(--font-secondary); cursor: pointer; }
 
-/* REVEAL + STATS */
-#zkgf-section,
-#reveal-section {
-  margin-top: 2rem;
-}
+#zkgf-section, #reveal-section { margin-top: 2rem; }
 
-#zkgf-section img,
-#reveal-section img {
-  width: 300px;
-  height: auto;
-  border-radius: 10px;
-  border: 2px solid var(--secondary);
-  margin-bottom: 1rem;
-}
+#zkgf-section img, #reveal-section img { width: 300px; height: auto; border-radius: 10px; border: 2px solid var(--secondary); margin-bottom: 1rem; }
 
-#zkgf-section button {
-  padding: 0.75rem 2rem;
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  background-color: var(--secondary);
-  color: #000;
-  border: none;
-  border-radius: 10px;
-  font-family: var(--font-secondary);
-  cursor: pointer;
-}
+#zkgf-section button { padding: 0.75rem 2rem; margin-top: 1rem; font-size: 1.1rem; background-color: var(--secondary); color: #000; border: none; border-radius: 10px; font-family: var(--font-secondary); cursor: pointer; }
 
-h2 {
-  font-family: var(--font-secondary);
-  color: var(--secondary);
-  margin-bottom: 0.5rem;
-}
+h2 { font-family: var(--font-secondary); color: var(--secondary); margin-bottom: 0.5rem; }
 
-p {
-  font-size: 0.9rem;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
-}
+p { font-size: 0.9rem; margin-top: 0.25rem; margin-bottom: 1rem; }
 
-.stats {
-  margin-top: 1.5rem;
-  text-align: left;
-}
+.stats { margin-top: 1.5rem; text-align: left; }
 
-.stat {
-  margin-bottom: 1rem;
-}
+.stat { margin-bottom: 1rem; }
 
-.stat label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.2rem;
-}
+.stat label { display: block; font-weight: bold; margin-bottom: 0.2rem; }
 
-.bar {
-  width: 100%;
-  background: #333;
-  height: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-}
+.bar { width: 100%; background: #333; height: 10px; border-radius: 5px; overflow: hidden; }
 
-.bar div {
-  height: 10px;
-  background-color: var(--secondary);
-}
+.bar div { height: 10px; background-color: var(--secondary); }
 
-/* OVERLAY */
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  opacity: 0.95;
-  z-index: 1000;
-  transition: opacity 1s ease-in-out;
-}
+#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000; opacity: 0.95; z-index: 1000; transition: opacity 1s ease-in-out; }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
-/* CONFETTI CANVAS */
-#confetti-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2000;
-}
+#confetti-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2000; }
 
-/* FOOTER */
-footer {
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.8rem;
-}
+footer { padding: 1rem; text-align: center; font-size: 0.8rem; }
 
-footer em {
-  font-style: italic;
-}
+footer em { font-style: italic; }
 
-footer a {
-  color: var(--secondary);
-  text-decoration: none;
-}
+footer a { color: var(--secondary); text-decoration: none; }
+
+                                        
