@@ -10,7 +10,7 @@ const assignedZKGFs = {};
 let currentUser = "";
 
 // Load team data from JSON file in root
-fetch('/top_2000_leaderboard.json')
+fetch('/top_2000_from_network.json')
   .then(response => response.json())
   .then(data => {
     teamData = Object.fromEntries(
