@@ -1,15 +1,17 @@
-/* Final CSS for Union ZKGF Generator with hyperbold UNION text */ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Supermolot+Sans:wght@400;700&display=swap');
+/* Final CSS for Union ZKGF Generator with fixed container alignment and UNION header */ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Supermolot+Sans:wght@400;700&display=swap');
 
 :root { --primary: #000000; --secondary: #ABECFD; --font-primary: 'JetBrains Mono', monospace; --font-secondary: 'Supermolot Sans', sans-serif; }
 
 { margin: 0; padding: 0; box-sizing: border-box; }
 
 
-body { background-color: var(--primary); color: white; font-family: var(--font-primary); min-height: 100vh; display: flex; flex-direction: column; }
+html, body { height: 100%; }
 
-/* HEADER */ .solid-header { background-color: #111111; padding: 0.6rem 1rem; border-bottom: 1px solid #222; }
+body { background-color: var(--primary); color: white; font-family: var(--font-primary); display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
 
-.header-bar { display: flex; align-items: center; justify-content: space-between; }
+/* HEADER */ .solid-header { background-color: #111111; padding: 0.6rem 1rem; border-bottom: 1px solid #222; width: 100%; }
+
+.header-bar { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
 
 .header-left { display: flex; align-items: center; gap: 0.4rem; }
 
@@ -21,9 +23,9 @@ body { background-color: var(--primary); color: white; font-family: var(--font-p
 
 .header-right { font-size: 1.2rem; color: white; }
 
-/* MAIN CONTENT */ main { flex: 1; display: flex; justify-content: center; align-items: center; padding: 1rem; }
+/* MAIN CONTENT */ main { flex: 1; width: 100%; display: flex; justify-content: center; align-items: center; padding: 1rem; }
 
-.container { max-width: 700px; width: 100%; background: #111111; padding: 2rem; border-radius: 10px; border: 1px solid var(--secondary); text-align: center; }
+.container { width: 100%; max-width: 700px; background: #111111; padding: 2rem; border-radius: 10px; border: 1px solid var(--secondary); text-align: center; margin: auto; }
 
 .center-screen { display: flex; justify-content: center; align-items: center; flex-direction: row; margin: 0 auto; width: 100%; flex-wrap: wrap; }
 
