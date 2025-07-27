@@ -7,17 +7,22 @@
 </head>
 <body>
   <header class="solid-header">
-    <div class="header-bar">
+  <div class="header-bar">
+    <div class="header-left">
       <img src="badge3.png" alt="Union Logo" class="logo" />
-      <div class="header-title">Union ZKGF Generator by Shinosuka 🎉</div>
     </div>
-  </header>  <main>
+    <div class="header-center">
+      Union ZKGF Generator by Shinosuka
+    </div>
+    <div class="header-right">🎉</div>
+  </div>
+  </header>
     <div class="container">
       <div id="input-section" class="center-screen">
         <input type="text" id="username" placeholder="Enter your username..." />
         <button onclick="submitUsername()">Submit</button>
       </div><div id="zkgf-section" class="hidden">
-    <img id="zkgf-image" src="hidden.png" alt="Hidden ZKGF" />
+    <img id="zkgf-image" src="/hidden.png" alt="Hidden ZKGF" />
     <h2>Are you ready to reveal your ZKGF?</h2>
     <p>There is no looking back, once revealed your ZKGF stays permanent.</p>
     <button onclick="revealZKGF()">Reveal Your ZKGF</button>
